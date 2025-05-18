@@ -106,6 +106,9 @@ services:
       - "${NGINX_EXPOSE_PORT:-8080}:${NGINX_PORT:-8080}"
     depends_on:
       - zammad-railsserver
+    volumes:
+      - ./branding/favicon.ico:/opt/zammad/public/fav.ico:ro
+      - ./branding/favicon.ico:/opt/zammad/public/favicon.ico:ro
 
   zammad-postgresql:
     environment:
